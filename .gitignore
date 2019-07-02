@@ -3,3 +3,7 @@ date_model
 logs
 model1
 model
+__pycache__
+*/__pycache__
+.vscode
+pass-model/*

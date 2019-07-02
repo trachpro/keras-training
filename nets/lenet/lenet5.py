@@ -8,7 +8,9 @@ import keras
 def LeNet5(input_shape, num_classes, pretrained_weights=None):
 
     input_image = layers.Input(shape=input_shape, name='input_1')
-    x = layers.Conv2D(filters=6, kernel_size=(3, 3), activation=activations.relu)(input_image)
+    x = layers.Conv2D(filters=16, kernel_size=(3, 3), activation=activations.relu)(input_image)
+    x = layers.AveragePooling2D(pool_size=(2, 2))(x)
+    x = layers.Conv2D(filters=16, kernel_size=(3, 3), activation=activations.relu)(x)
     x = layers.AveragePooling2D(pool_size=(2, 2))(x)
     x = layers.Conv2D(filters=16, kernel_size=(3, 3), activation=activations.relu)(x)
     x = layers.AveragePooling2D(pool_size=(2, 2))(x)

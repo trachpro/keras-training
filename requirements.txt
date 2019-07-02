@@ -1,0 +1,4 @@
+tensorflow
+keras
+tqdm
+scikit-learn
