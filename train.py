@@ -56,7 +56,7 @@ model.compile(loss=keras.losses.sparse_categorical_crossentropy,
               metrics=['accuracy'])
 model.fit_generator(
         train_generator,
-        steps_per_epoch= 118400 // BATCH_SIZE,
+        steps_per_epoch= 10656 // BATCH_SIZE,
         initial_epoch=0,
         epochs=N_EPOCHS,
         validation_data=validation_generator,
