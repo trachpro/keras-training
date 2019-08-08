@@ -8,3 +8,7 @@ nets/__pycache__
 nets/lenet/__pycache__
 pb_model/
 pb_number
+__pycache__
+*/__pycache__
+.vscode
+pass-model/*
