@@ -3,3 +3,8 @@ date_model
 logs
 model1
 model
+pass-model
+nets/__pycache__
+nets/lenet/__pycache__
+pb_model/
+pb_number
