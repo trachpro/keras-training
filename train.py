@@ -46,11 +46,7 @@ train_generator = datagen.flow_from_directory(
         target_size=(IMG_SIZE, IMG_SIZE),
         batch_size=BATCH_SIZE, class_mode ='sparse', color_mode="grayscale")
 
-<<<<<<< HEAD
 f = open('/home/ai-team/projects/tupm/character/label_out.txt', "w+")
-=======
-f = open('/home/tupm/Projects/text-gen-ocr/label_out.txt', "w+")
->>>>>>> 2e246e98271f3b7290db8d63c93da1bc1fd00cf4
 class_lable = train_generator.class_indices
 class_lable = list(class_lable.keys())
 for i in range(len(class_lable)):
@@ -66,11 +62,7 @@ validation_generator = datagen.flow_from_directory(
 model = LeNet5(input_shape=(50,50,1), num_classes=N_CLASSES)
 #model.load_weights('/home/thanh/Downloads/keras-training/date_model/201904251621/weights-improvement-40-0.97-0.50-0.11.hdf5')
 model.summary()
-<<<<<<< HEAD
 save_model_path = os.path.join('/home/ai-team/HDD/tupm/keras-training/pass-model','{}'.format(datetime.datetime.now().strftime('%Y%m%d%H%M')))
-=======
-save_model_path = os.path.join('/home/tupm/Projects/keras-training/pass-model','{}'.format(datetime.datetime.now().strftime('%Y%m%d%H%M')))
->>>>>>> 2e246e98271f3b7290db8d63c93da1bc1fd00cf4
 os.makedirs(save_model_path, exist_ok= True)
 model_file = os.path.join(save_model_path, "weights-improvement-{epoch:02d}-{loss:.2f}.hdf5")
 ModelCheckpoint = keras.callbacks.ModelCheckpoint
@@ -84,23 +76,14 @@ model.compile(loss=keras.losses.sparse_categorical_crossentropy,
               metrics=['accuracy'])
 model.fit_generator(
         train_generator,
-<<<<<<< HEAD
         steps_per_epoch= 175560 // BATCH_SIZE,
-=======
-        steps_per_epoch= 10656 // BATCH_SIZE,
->>>>>>> 2e246e98271f3b7290db8d63c93da1bc1fd00cf4
         initial_epoch=0,
         epochs=N_EPOCHS,
         validation_data=validation_generator,
         validation_steps= 5920 // BATCH_SIZE,
         callbacks=callbacks_list,
-<<<<<<< HEAD
         max_queue_size=12,
         workers=6,
-=======
-        max_queue_size=4,
-        workers=2,
->>>>>>> 2e246e98271f3b7290db8d63c93da1bc1fd00cf4
         use_multiprocessing=True,
         )
 model.save(os.path.join(save_model_path,"date_model.hdf5"))
